@@ -1,0 +1,36 @@
+// creer une categorie 
+
+php artisan tinker 
+$new_category = new Category;
+$new_category->titile='new category'; // le title correspond au nom de la categories
+$new_category->slug=STR::slug($new_category->titile);
+$new_category->save();
+
+
+// suprimer une categorie 
+
+php artisan tinker 
+$category = Category::find($id); // $id de la categorie a supprimer 
+$category->delete();
+
+
+// creer un produit 
+
+php artisan tinker 
+$produit = new Menu; // le modele Menu corresponds a la table des produits 
+$produit->title=' new produit ';
+$produit->description=' description du nouveau produit ';
+$produit->prix ='2222';
+$produit->image='images/nameimage';
+$produit->save();
+
+
+suprimer un produit
+
+php artisan tinker 
+$produit = find($id);
+unlink(public_path('images/.$produit->image));
+$produit->delete();
+
+
+
